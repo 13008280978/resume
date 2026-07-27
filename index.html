@@ -348,6 +348,22 @@ body {
 .tl-item.cert-link:hover h3::after {
   opacity: 1;
 }
+.edu-stat.cert-link {
+  transition: all 0.2s;
+  border-radius: 8px;
+}
+.edu-stat.cert-link:hover {
+  background: var(--primary-soft);
+  transform: translateY(-2px);
+}
+.edu-stat.cert-link .label::after {
+  content: ' 🔗';
+  font-size: 10px;
+  opacity: 0.5;
+}
+.edu-stat.cert-link:hover .label::after {
+  opacity: 1;
+}
 .cert-modal-overlay {
   display: none;
   position: fixed; top: 0; left: 0; right: 0; bottom: 0;
@@ -381,6 +397,41 @@ body {
   font-size: 28px;
   cursor: pointer;
   line-height: 1;
+  z-index: 2;
+}
+.cert-modal-prev, .cert-modal-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: background 0.2s;
+}
+.cert-modal-prev { left: 10px; }
+.cert-modal-next { right: 10px; }
+.cert-modal-prev:hover, .cert-modal-next:hover {
+  background: rgba(0,0,0,0.8);
+}
+.cert-modal-counter {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 13px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  z-index: 2;
 }
 .cert-modal-open {
   font-size: 13px;
@@ -562,7 +613,7 @@ function switchLang(l){
           <div class="value">1/145</div>
           <div class="detail"><span class="zh-only">综合年级 11/1089</span><span class="en-only">Grade 11/1089</span></div>
         </div>
-        <div class="edu-stat">
+        <div class="edu-stat cert-link" data-cert="certs/gpa-sophomore.jpg" style="cursor:pointer;">
           <div class="label"><span class="zh-only">大二 · 专业排名</span><span class="en-only">Sophomore · Major</span></div>
           <div class="value">2/143</div>
           <div class="detail"><span class="zh-only">综合年级 18/1089</span><span class="en-only">Grade 18/1089</span></div>
@@ -626,8 +677,8 @@ function switchLang(l){
         <li class="en-only cert-link" data-cert="https://www.dlufl.edu.cn/info/1046/12676.htm">2025 China International College Students' Innovation Competition — Liaoning Gold</li>
         <li class="zh-only cert-link" data-cert="certs/challenge-cup.jpg">第十七届"挑战杯"课外学术科技作品竞赛 — 辽宁省一等奖</li>
         <li class="en-only cert-link" data-cert="certs/challenge-cup.jpg">17th "Challenge Cup" Academic S&amp;T Competition — Liaoning First Prize</li>
-        <li class="zh-only">2025年辽宁省无线电测定向大赛 — 辽宁省一等奖</li>
-        <li class="en-only">2025 Liaoning Radio Direction Finding Competition — First Prize</li>
+        <li class="zh-only cert-link" data-cert="certs/radio-direction-finding.jpg">2025年辽宁省无线电测定向大赛 — 辽宁省一等奖</li>
+        <li class="en-only cert-link" data-cert="certs/radio-direction-finding.jpg">2025 Liaoning Radio Direction Finding Competition — First Prize</li>
       </ul>
     </div>
 
@@ -678,8 +729,8 @@ function switchLang(l){
     </div>
 
     <div class="highlight-box">
-      <p class="zh-only"><strong>其他成果：</strong><span class="cert-link" data-cert="https://scholar.cnki.net/zn/Detail/index/GARJ2021_6/SQMZ4ECD2F7712DEEBB2DD9F75804FAC32B9" style="cursor:pointer;">知网论文 1 篇</span> &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/software-copyright.jpeg" style="cursor:pointer;">软件著作权 1 项</span> &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/government-commendation.jpg" style="cursor:pointer;">区政府表彰</span> &nbsp;|&nbsp; 媒体报道数十次 &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/iitc.jpeg" style="cursor:pointer;">IITC 工业互联网平台开发工程师</span> &nbsp;|&nbsp; CRA 市场调查与分析人才证书</p>
-      <p class="en-only"><strong>Other:</strong> <span class="cert-link" data-cert="https://scholar.cnki.net/zn/Detail/index/GARJ2021_6/SQMZ4ECD2F7712DEEBB2DD9F75804FAC32B9" style="cursor:pointer;">1 CNKI paper</span> &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/software-copyright.jpeg" style="cursor:pointer;">1 software copyright</span> &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/government-commendation.jpg" style="cursor:pointer;">District government commendation</span> &nbsp;|&nbsp; Dozens of media reports &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/iitc.jpeg" style="cursor:pointer;">IITC Industrial Internet Developer</span> &nbsp;|&nbsp; CRA Market Research Certificate</p>
+      <p class="zh-only"><strong>其他成果：</strong><span class="cert-link" data-cert="https://scholar.cnki.net/zn/Detail/index/GARJ2021_6/SQMZ4ECD2F7712DEEBB2DD9F75804FAC32B9" style="cursor:pointer;">知网论文 1 篇</span> &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/software-copyright.jpeg" style="cursor:pointer;">软件著作权 1 项</span> &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/government-commendation.jpg" style="cursor:pointer;">区政府表彰</span> &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/social-practice-cert.jpg,certs/social-practice-cover.jpg" style="cursor:pointer;">社会实践先进个人</span> &nbsp;|&nbsp; 媒体报道数十次 &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/iitc.jpeg" style="cursor:pointer;">IITC 工业互联网平台开发工程师</span> &nbsp;|&nbsp; CRA 市场调查与分析人才证书</p>
+      <p class="en-only"><strong>Other:</strong> <span class="cert-link" data-cert="https://scholar.cnki.net/zn/Detail/index/GARJ2021_6/SQMZ4ECD2F7712DEEBB2DD9F75804FAC32B9" style="cursor:pointer;">1 CNKI paper</span> &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/software-copyright.jpeg" style="cursor:pointer;">1 software copyright</span> &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/government-commendation.jpg" style="cursor:pointer;">District government commendation</span> &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/social-practice-cert.jpg,certs/social-practice-cover.jpg" style="cursor:pointer;">Social Practice Outstanding Individual</span> &nbsp;|&nbsp; Dozens of media reports &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/iitc.jpeg" style="cursor:pointer;">IITC Industrial Internet Developer</span> &nbsp;|&nbsp; CRA Market Research Certificate</p>
     </div>
   </div>
 
@@ -688,6 +739,9 @@ function switchLang(l){
     <div class="cert-modal">
       <button class="cert-modal-close" onclick="closeCertModal(event)">✕</button>
       <img id="certModalImg" src="" alt="证书" />
+      <button class="cert-modal-prev" onclick="certPrev(event)" style="display:none;">‹</button>
+      <button class="cert-modal-next" onclick="certNext(event)" style="display:none;">›</button>
+      <div class="cert-modal-counter" id="certCounter" style="display:none;"></div>
     </div>
   </div>
 
@@ -755,7 +809,7 @@ function switchLang(l){
         <p class="zh-only">参与智能控制实验。</p>
         <p class="en-only">Participated in intelligent control experiments.</p>
       </div>
-      <div class="tl-item cert-link" data-cert="certs/sports-meet.jpg">
+      <div class="tl-item cert-link" data-cert="certs/sports-meet.jpg,certs/sports-long-jump.jpg,certs/sports-200m.jpg">
         <h3><span class="zh-only">大连外国语大学校运动会</span><span class="en-only">DUFL Sports Meet</span></h3>
         <span class="time">2026</span>
         <p class="zh-only">跳远冠军、200米第四名。</p>
@@ -767,7 +821,7 @@ function switchLang(l){
         <p class="zh-only">季军。</p>
         <p class="en-only">Third place.</p>
       </div>
-      <div class="tl-item">
+      <div class="tl-item cert-link" data-cert="certs/fisu-certificate.jpg,certs/fisu-backdrop.jpg">
         <h3><span class="zh-only">2025年国际大体联足球世界杯闭幕式</span><span class="en-only">2025 FISU Football World Cup Closing Ceremony</span></h3>
         <p class="zh-only">担任志愿者。</p>
         <p class="en-only">Served as volunteer.</p>
@@ -781,6 +835,9 @@ function switchLang(l){
 
 <script>
 // Certificate click handler
+var certImages = [];
+var certIndex = 0;
+
 document.addEventListener('click', function(e) {
   var el = e.target.closest('.cert-link');
   if (!el) return;
@@ -791,15 +848,45 @@ document.addEventListener('click', function(e) {
     // External URL: open in new tab
     window.open(cert, '_blank');
   } else {
-    // Local image: show in modal
-    var modal = document.getElementById('certModal');
-    var img = document.getElementById('certModalImg');
-    img.src = cert;
-    modal.classList.add('active');
+    // Local image(s): show in modal
+    certImages = cert.split(',').map(function(s) { return s.trim(); });
+    certIndex = 0;
+    showCertImage();
+    document.getElementById('certModal').classList.add('active');
     e.preventDefault();
     e.stopPropagation();
   }
 });
+
+function showCertImage() {
+  var img = document.getElementById('certModalImg');
+  img.src = certImages[certIndex];
+  var prev = document.querySelector('.cert-modal-prev');
+  var next = document.querySelector('.cert-modal-next');
+  var counter = document.getElementById('certCounter');
+  if (certImages.length > 1) {
+    prev.style.display = 'flex';
+    next.style.display = 'flex';
+    counter.style.display = 'block';
+    counter.textContent = (certIndex + 1) + ' / ' + certImages.length;
+  } else {
+    prev.style.display = 'none';
+    next.style.display = 'none';
+    counter.style.display = 'none';
+  }
+}
+
+function certPrev(e) {
+  if (e) e.stopPropagation();
+  certIndex = (certIndex - 1 + certImages.length) % certImages.length;
+  showCertImage();
+}
+
+function certNext(e) {
+  if (e) e.stopPropagation();
+  certIndex = (certIndex + 1) % certImages.length;
+  showCertImage();
+}
 
 function closeCertModal(e) {
   if (e.target.classList.contains('cert-modal-overlay') || e.target.classList.contains('cert-modal-close') || e.target.tagName === 'BUTTON') {
@@ -812,7 +899,23 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
     document.getElementById('certModal').classList.remove('active');
   }
+  if (e.key === 'ArrowLeft') certPrev();
+  if (e.key === 'ArrowRight') certNext();
 });
+
+// Touch swipe support
+var touchStartX = 0;
+var touchEndX = 0;
+document.getElementById('certModal').addEventListener('touchstart', function(e) {
+  touchStartX = e.changedTouches[0].screenX;
+}, {passive: true});
+document.getElementById('certModal').addEventListener('touchend', function(e) {
+  touchEndX = e.changedTouches[0].screenX;
+  var diff = touchStartX - touchEndX;
+  if (Math.abs(diff) > 50 && certImages.length > 1) {
+    if (diff > 0) certNext(); else certPrev();
+  }
+}, {passive: true});
 </script>
 </body>
 </html>
