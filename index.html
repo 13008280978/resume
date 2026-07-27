@@ -331,6 +331,23 @@ body {
 .award-list li.cert-link:hover::after {
   opacity: 1;
 }
+.tl-item.cert-link {
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 8px;
+}
+.tl-item.cert-link:hover {
+  background: var(--primary-soft);
+  padding-left: 16px;
+}
+.tl-item.cert-link h3::after {
+  content: ' 🔗';
+  font-size: 11px;
+  opacity: 0.5;
+}
+.tl-item.cert-link:hover h3::after {
+  opacity: 1;
+}
 .cert-modal-overlay {
   display: none;
   position: fixed; top: 0; left: 0; right: 0; bottom: 0;
@@ -625,8 +642,8 @@ function switchLang(l){
         <li class="en-only cert-link" data-cert="https://mp.weixin.qq.com/s/DoN-zQEnzIRfHTl17rJimg">2025 Liaoning Big Data Application &amp; Analysis Competition — Second Prize</li>
         <li class="zh-only cert-link" data-cert="https://mp.weixin.qq.com/s/dzzYLc6RqtF_4QCfGGom_Q">2025年辽宁省大学生"中软国际——卓越杯"（第四届） — 二等奖</li>
         <li class="en-only cert-link" data-cert="https://mp.weixin.qq.com/s/dzzYLc6RqtF_4QCfGGom_Q">2025 Liaoning "Chinasoft Excellence Cup" (4th) — Second Prize</li>
-        <li class="zh-only cert-link" data-cert="https://mp.weixin.qq.com/s/lPIhf3FyjguG_taCx8Djwg">"中科杯"高校图书馆"文化润心 精神铸魂"活动 — 二等奖</li>
-        <li class="en-only cert-link" data-cert="https://mp.weixin.qq.com/s/lPIhf3FyjguG_taCx8Djwg">"Zhongke Cup" Library "Culture Nourishes the Mind" — Second Prize</li>
+        <li class="zh-only cert-link" data-cert="certs/zhongke-cup.jpg">"中科杯"高校图书馆"文化润心 精神铸魂"活动 — 二等奖</li>
+        <li class="en-only cert-link" data-cert="certs/zhongke-cup.jpg">"Zhongke Cup" Library "Culture Nourishes the Mind" — Second Prize</li>
       </ul>
     </div>
 
@@ -738,7 +755,7 @@ function switchLang(l){
         <p class="zh-only">参与智能控制实验。</p>
         <p class="en-only">Participated in intelligent control experiments.</p>
       </div>
-      <div class="tl-item">
+      <div class="tl-item cert-link" data-cert="certs/sports-meet.jpg">
         <h3><span class="zh-only">大连外国语大学校运动会</span><span class="en-only">DUFL Sports Meet</span></h3>
         <span class="time">2026</span>
         <p class="zh-only">跳远冠军、200米第四名。</p>
