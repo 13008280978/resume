@@ -948,6 +948,23 @@ function switchLang(l){
       if (diff > 0) certNext(); else certPrev();
     }
   }, {passive: true});
+
+  // Preload certificate images after page is fully loaded
+  window.addEventListener('load', function() {
+    var certs = document.querySelectorAll('[data-cert]');
+    var seen = {};
+    certs.forEach(function(el) {
+      var val = el.getAttribute('data-cert');
+      if (!val || val.startsWith('http')) return;
+      val.split(',').forEach(function(path) {
+        path = path.trim();
+        if (seen[path]) return;
+        seen[path] = true;
+        var img = new Image();
+        img.src = path;
+      });
+    });
+  });
 })();
 </script>
 </body>
