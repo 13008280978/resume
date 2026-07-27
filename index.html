@@ -913,7 +913,7 @@ function certNext(e) {
 }
 
 function closeCertModal(e) {
-  if (e.target.classList.contains('cert-modal-overlay') || e.target.classList.contains('cert-modal-close') || e.target.tagName === 'BUTTON') {
+  if (e.target.classList.contains('cert-modal-overlay') || e.target.classList.contains('cert-modal-close') || e.target.closest('.cert-modal-close')) {
     document.getElementById('certModal').classList.remove('active');
   }
 }
