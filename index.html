@@ -611,8 +611,8 @@ function switchLang(l){
       <span class="zh-only">关于我</span><span class="en-only">About Me</span>
     </div>
     <div class="about-box">
-      <p class="zh-only">大连外国语大学软件学院网络工程专业2024级本科生，拥有两年以上项目负责经验，两项成果已投入工业生产。研究方向涵盖嵌入式系统开发、智能控制、图像处理与识别、网络安全等领域。主持设计水陆两栖智能工业机器人并落地工业生产，自主搭建磁悬浮智能控制平台并应用于产线。累计获国家级奖项2项、省部级奖项22项，发表知网论文1篇，持有软件著作权1项。</p>
-      <p class="en-only">Undergraduate (Class of 2024) in Network Engineering at the School of Software, DLUFL, with over two years of project leadership and two outcomes deployed in industrial production. Research spans embedded systems, intelligent control, image processing &amp; recognition, and cybersecurity. Led the design of an amphibious intelligent industrial robot now in production use, and independently built a maglev intelligent control platform applied to production lines. Recipient of 2 national-level and 22 provincial/ministerial-level awards, 1 CNKI paper, and 1 software copyright.</p>
+      <p class="zh-only">大连外国语大学软件学院网络工程专业2024级本科生，拥有两年以上项目负责经验，两项成果已投入工业生产。研究方向涵盖嵌入式系统开发、智能控制、图像处理与识别、网络安全等领域。主持设计水陆两栖智能工业机器人并落地工业生产，自主搭建磁悬浮智能控制平台并应用于产线。累计获国家级奖项2项、省部级奖项23项，发表知网论文1篇，持有软件著作权1项。</p>
+      <p class="en-only">Undergraduate (Class of 2024) in Network Engineering at the School of Software, DLUFL, with over two years of project leadership and two outcomes deployed in industrial production. Research spans embedded systems, intelligent control, image processing &amp; recognition, and cybersecurity. Led the design of an amphibious intelligent industrial robot now in production use, and independently built a maglev intelligent control platform applied to production lines. Recipient of 2 national-level and 23 provincial/ministerial-level awards, 1 CNKI paper, and 1 software copyright.</p>
     </div>
   </div>
 
@@ -691,8 +691,8 @@ function switchLang(l){
         <li class="en-only cert-link" data-cert="certs/math-modeling.jpg">2025 CUMCM (Liaoning Division) — First Prize</li>
         <li class="zh-only">2026年辽宁省移动应用开发大赛（APP开发赛道） — 辽宁省一等奖</li>
         <li class="en-only">2026 Liaoning Mobile App Development Competition (App Development Track) — First Prize</li>
-        <li class="zh-only cert-link" data-cert="https://www.dlufl.edu.cn/info/1046/12676.htm">2025年中国国际大学生创新大赛 — 辽宁省金奖</li>
-        <li class="en-only cert-link" data-cert="https://www.dlufl.edu.cn/info/1046/12676.htm">2025 China International College Students' Innovation Competition — Liaoning Gold</li>
+        <li class="zh-only cert-link" data-cert="certs/innovation-gold.jpg">2025年"建行杯"辽宁省大学生创新大赛（高教主赛道） — 金奖</li>
+        <li class="en-only cert-link" data-cert="certs/innovation-gold.jpg">2025 "CCB Cup" Liaoning College Students' Innovation Competition (Main Track) — Gold</li>
         <li class="zh-only cert-link" data-cert="certs/challenge-cup.jpg">第十七届"挑战杯"课外学术科技作品竞赛 — 辽宁省一等奖</li>
         <li class="en-only cert-link" data-cert="certs/challenge-cup.jpg">17th "Challenge Cup" Academic S&amp;T Competition — Liaoning First Prize</li>
         <li class="zh-only cert-link" data-cert="certs/radio-direction-finding.jpg">2025年辽宁省无线电测定向大赛 — 辽宁省一等奖</li>
@@ -717,7 +717,7 @@ function switchLang(l){
     </div>
 
     <div class="award-group">
-      <div class="award-level"><span class="medal">🥉</span><span class="zh-only">省级三等奖（7项）</span><span class="en-only">Provincial Third Prize (7)</span></div>
+      <div class="award-level"><span class="medal">🥉</span><span class="zh-only">省级三等奖（8项）</span><span class="en-only">Provincial Third Prize (8)</span></div>
       <ul class="award-list">
         <li class="zh-only cert-link" data-cert="certs/cfcc.jpeg">第九届 CFCC 智慧经济创新创业竞赛 — 三等奖</li>
         <li class="en-only cert-link" data-cert="certs/cfcc.jpeg">9th CFCC Smart Economy Innovation Competition — Third Prize</li>
@@ -733,6 +733,8 @@ function switchLang(l){
         <li class="en-only">2025 Liaoning Radio Direction Finding Competition — Third Prize</li>
         <li class="zh-only cert-link" data-cert="certs/cross-strait.jpeg">第二十届海峡两岸暨港澳地区大学生计算机创新作品赛 — 辽吉蒙赛区三等奖</li>
         <li class="en-only cert-link" data-cert="certs/cross-strait.jpeg">20th Cross-Strait &amp; HK/Macau Computer Innovation — Regional Third Prize</li>
+        <li class="zh-only cert-link" data-cert="certs/innovation-bronze.jpg">2025年"建行杯"辽宁省大学生创新大赛（产业赛道） — 铜奖</li>
+        <li class="en-only cert-link" data-cert="certs/innovation-bronze.jpg">2025 "CCB Cup" Liaoning College Students' Innovation Competition (Industry Track) — Bronze</li>
       </ul>
     </div>
 
@@ -753,12 +755,12 @@ function switchLang(l){
   </div>
 
   <!-- Certificate Modal -->
-  <div class="cert-modal-overlay" id="certModal" onclick="closeCertModal(event)">
+  <div class="cert-modal-overlay" id="certModal">
     <div class="cert-modal">
-      <button class="cert-modal-close" onclick="closeCertModal(event)">✕</button>
+      <button class="cert-modal-close" type="button">✕</button>
       <img id="certModalImg" src="" alt="证书" />
-      <button class="cert-modal-prev" onclick="certPrev(event)" style="display:none;">‹</button>
-      <button class="cert-modal-next" onclick="certNext(event)" style="display:none;">›</button>
+      <button class="cert-modal-prev" type="button" style="display:none;">‹</button>
+      <button class="cert-modal-next" type="button" style="display:none;">›</button>
       <div class="cert-modal-counter" id="certCounter" style="display:none;"></div>
     </div>
   </div>
@@ -858,88 +860,95 @@ function switchLang(l){
 </div>
 
 <script>
-// Certificate click handler
-var certImages = [];
-var certIndex = 0;
-
-document.addEventListener('click', function(e) {
-  var el = e.target.closest('.cert-link');
-  if (!el) return;
-  var cert = el.getAttribute('data-cert');
-  if (!cert) return;
-  
-  if (cert.startsWith('http')) {
-    // External URL: open in new tab
-    window.open(cert, '_blank');
-  } else {
-    // Local image(s): show in modal
-    certImages = cert.split(',').map(function(s) { return s.trim(); });
-    certIndex = 0;
-    showCertImage();
-    document.getElementById('certModal').classList.add('active');
-    e.preventDefault();
-    e.stopPropagation();
-  }
-});
-
-function showCertImage() {
-  var img = document.getElementById('certModalImg');
-  img.src = certImages[certIndex];
-  var prev = document.querySelector('.cert-modal-prev');
-  var next = document.querySelector('.cert-modal-next');
+(function() {
+  var certImages = [];
+  var certIndex = 0;
+  var modal = document.getElementById('certModal');
+  var modalImg = document.getElementById('certModalImg');
+  var prevBtn = document.querySelector('.cert-modal-prev');
+  var nextBtn = document.querySelector('.cert-modal-next');
   var counter = document.getElementById('certCounter');
-  if (certImages.length > 1) {
-    prev.style.display = 'flex';
-    next.style.display = 'flex';
-    counter.style.display = 'block';
-    counter.textContent = (certIndex + 1) + ' / ' + certImages.length;
-  } else {
-    prev.style.display = 'none';
-    next.style.display = 'none';
-    counter.style.display = 'none';
+
+  // Open modal when clicking a cert-link element
+  document.addEventListener('click', function(e) {
+    var el = e.target.closest('.cert-link');
+    if (!el) return;
+    var cert = el.getAttribute('data-cert');
+    if (!cert) return;
+    if (cert.startsWith('http')) {
+      window.open(cert, '_blank');
+    } else {
+      certImages = cert.split(',').map(function(s) { return s.trim(); });
+      certIndex = 0;
+      showCertImage();
+      modal.classList.add('active');
+      e.preventDefault();
+    }
+  });
+
+  function showCertImage() {
+    modalImg.src = certImages[certIndex];
+    if (certImages.length > 1) {
+      prevBtn.style.display = 'flex';
+      nextBtn.style.display = 'flex';
+      counter.style.display = 'block';
+      counter.textContent = (certIndex + 1) + ' / ' + certImages.length;
+    } else {
+      prevBtn.style.display = 'none';
+      nextBtn.style.display = 'none';
+      counter.style.display = 'none';
+    }
   }
-}
 
-function certPrev(e) {
-  if (e) e.stopPropagation();
-  certIndex = (certIndex - 1 + certImages.length) % certImages.length;
-  showCertImage();
-}
-
-function certNext(e) {
-  if (e) e.stopPropagation();
-  certIndex = (certIndex + 1) % certImages.length;
-  showCertImage();
-}
-
-function closeCertModal(e) {
-  if (e.target.classList.contains('cert-modal-overlay') || e.target.classList.contains('cert-modal-close') || e.target.closest('.cert-modal-close')) {
-    document.getElementById('certModal').classList.remove('active');
+  function certPrev() {
+    certIndex = (certIndex - 1 + certImages.length) % certImages.length;
+    showCertImage();
   }
-}
 
-// ESC to close modal
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    document.getElementById('certModal').classList.remove('active');
+  function certNext() {
+    certIndex = (certIndex + 1) % certImages.length;
+    showCertImage();
   }
-  if (e.key === 'ArrowLeft') certPrev();
-  if (e.key === 'ArrowRight') certNext();
-});
 
-// Touch swipe support
-var touchStartX = 0;
-var touchEndX = 0;
-document.getElementById('certModal').addEventListener('touchstart', function(e) {
-  touchStartX = e.changedTouches[0].screenX;
-}, {passive: true});
-document.getElementById('certModal').addEventListener('touchend', function(e) {
-  touchEndX = e.changedTouches[0].screenX;
-  var diff = touchStartX - touchEndX;
-  if (Math.abs(diff) > 50 && certImages.length > 1) {
-    if (diff > 0) certNext(); else certPrev();
-  }
-}, {passive: true});
+  // Event delegation on the modal overlay
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      // Clicked on the overlay background
+      modal.classList.remove('active');
+    } else if (e.target.closest('.cert-modal-close')) {
+      modal.classList.remove('active');
+    } else if (e.target.closest('.cert-modal-prev')) {
+      certPrev();
+    } else if (e.target.closest('.cert-modal-next')) {
+      certNext();
+    }
+  });
+
+  // Keyboard support
+  document.addEventListener('keydown', function(e) {
+    if (!modal.classList.contains('active')) return;
+    if (e.key === 'Escape') {
+      modal.classList.remove('active');
+    } else if (e.key === 'ArrowLeft') {
+      certPrev();
+    } else if (e.key === 'ArrowRight') {
+      certNext();
+    }
+  });
+
+  // Touch swipe support
+  var touchStartX = 0;
+  modal.addEventListener('touchstart', function(e) {
+    touchStartX = e.changedTouches[0].screenX;
+  }, {passive: true});
+  modal.addEventListener('touchend', function(e) {
+    var touchEndX = e.changedTouches[0].screenX;
+    var diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 50 && certImages.length > 1) {
+      if (diff > 0) certNext(); else certPrev();
+    }
+  }, {passive: true});
+})();
 </script>
 </body>
 </html>
