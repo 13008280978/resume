@@ -313,6 +313,65 @@ body {
   color: var(--primary);
   font-weight: 600;
 }
+.award-list li.cert-link {
+  cursor: pointer;
+  transition: all 0.2s;
+  border-bottom: 1px solid var(--border-light);
+}
+.award-list li.cert-link:hover {
+  background: var(--primary-soft);
+  padding-left: 24px;
+  color: var(--primary);
+}
+.award-list li.cert-link::after {
+  content: ' 🔗';
+  font-size: 11px;
+  opacity: 0.5;
+}
+.award-list li.cert-link:hover::after {
+  opacity: 1;
+}
+.cert-modal-overlay {
+  display: none;
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 100;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.cert-modal-overlay.active { display: flex; }
+.cert-modal {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+  border-radius: 12px;
+  background: #fff;
+}
+.cert-modal img {
+  display: block;
+  max-width: 100%;
+  max-height: 85vh;
+  border-radius: 12px;
+}
+.cert-modal-close {
+  position: absolute;
+  top: -40px; right: 0;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  line-height: 1;
+}
+.cert-modal-open {
+  font-size: 13px;
+  color: var(--primary-muted);
+  text-decoration: none;
+  margin-left: 8px;
+}
+.cert-modal-open:hover { text-decoration: underline; }
 
 /* ===== Other achievements highlight ===== */
 .highlight-box {
@@ -527,28 +586,29 @@ function switchLang(l){
       <span class="icon">🏆</span>
       <span class="zh-only">荣誉与奖项</span><span class="en-only">Honors &amp; Awards</span>
     </div>
+    <p style="font-size:12px;color:var(--text-4);margin-bottom:12px;"><span class="zh-only">点击带有 🔗 标记的奖项可查看证书</span><span class="en-only">Click awards marked with 🔗 to view certificates</span></p>
 
     <div class="award-group">
       <div class="award-level"><span class="medal">🥇</span><span class="zh-only">国家级（2项）</span><span class="en-only">National Level (2)</span></div>
       <ul class="award-list">
-        <li class="zh-only">ICPC 国际大学生程序设计大赛（陕西站）全国邀请赛 — <strong>全国优秀奖</strong></li>
-        <li class="en-only">ICPC (Shaanxi) National Invitational — <strong>National Excellence Award</strong></li>
-        <li class="zh-only">全国大学生计算机应用能力与数字素养大赛 — <strong>全国三等奖</strong></li>
-        <li class="en-only">National Computer Application &amp; Digital Literacy Competition — <strong>National Third Prize</strong></li>
+        <li class="zh-only cert-link" data-cert="certs/icpc.png">ICPC 国际大学生程序设计大赛（陕西站）全国邀请赛 — <strong>全国优秀奖</strong></li>
+        <li class="en-only cert-link" data-cert="certs/icpc.png">ICPC (Shaanxi) National Invitational — <strong>National Excellence Award</strong></li>
+        <li class="zh-only cert-link" data-cert="certs/computer-app.jpeg">全国大学生计算机应用能力与数字素养大赛 — <strong>全国三等奖</strong></li>
+        <li class="en-only cert-link" data-cert="certs/computer-app.jpeg">National Computer Application &amp; Digital Literacy Competition — <strong>National Third Prize</strong></li>
       </ul>
     </div>
 
     <div class="award-group">
       <div class="award-level"><span class="medal">🥇</span><span class="zh-only">省级一等奖（5项）</span><span class="en-only">Provincial First Prize (5)</span></div>
       <ul class="award-list">
-        <li class="zh-only">2025年高教社杯全国大学生数学建模竞赛（辽宁赛区） — 辽宁省一等奖</li>
-        <li class="en-only">2025 CUMCM (Liaoning Division) — First Prize</li>
+        <li class="zh-only cert-link" data-cert="certs/math-modeling.png">2025年高教社杯全国大学生数学建模竞赛（辽宁赛区） — 辽宁省一等奖</li>
+        <li class="en-only cert-link" data-cert="certs/math-modeling.png">2025 CUMCM (Liaoning Division) — First Prize</li>
         <li class="zh-only">2026年辽宁省移动应用开发大赛（APP开发赛道） — 辽宁省一等奖</li>
         <li class="en-only">2026 Liaoning Mobile App Development Competition (App Development Track) — First Prize</li>
-        <li class="zh-only">2025年中国国际大学生创新大赛 — 辽宁省金奖</li>
-        <li class="en-only">2025 China International College Students' Innovation Competition — Liaoning Gold</li>
-        <li class="zh-only">第十七届"挑战杯"课外学术科技作品竞赛 — 辽宁省一等奖</li>
-        <li class="en-only">17th "Challenge Cup" Academic S&amp;T Competition — Liaoning First Prize</li>
+        <li class="zh-only cert-link" data-cert="https://www.dlufl.edu.cn/info/1046/12676.htm">2025年中国国际大学生创新大赛 — 辽宁省金奖</li>
+        <li class="en-only cert-link" data-cert="https://www.dlufl.edu.cn/info/1046/12676.htm">2025 China International College Students' Innovation Competition — Liaoning Gold</li>
+        <li class="zh-only cert-link" data-cert="certs/challenge-cup.jpeg">第十七届"挑战杯"课外学术科技作品竞赛 — 辽宁省一等奖</li>
+        <li class="en-only cert-link" data-cert="certs/challenge-cup.jpeg">17th "Challenge Cup" Academic S&amp;T Competition — Liaoning First Prize</li>
         <li class="zh-only">2025年辽宁省无线电测定向大赛 — 辽宁省一等奖</li>
         <li class="en-only">2025 Liaoning Radio Direction Finding Competition — First Prize</li>
       </ul>
@@ -559,50 +619,58 @@ function switchLang(l){
       <ul class="award-list">
         <li class="zh-only">2026年辽宁省大学生数学建模竞赛 — 辽宁省二等奖</li>
         <li class="en-only">2026 Liaoning College Mathematical Modeling Competition — Second Prize</li>
-        <li class="zh-only">2025、2026年辽宁省本科大学生计算机设计竞赛 — 二等奖 ×2</li>
-        <li class="en-only">2025, 2026 Liaoning Undergraduate Computer Design Competition — Second Prize ×2</li>
-        <li class="zh-only">2025年辽宁省大学生大数据应用与分析大赛 — 二等奖</li>
-        <li class="en-only">2025 Liaoning Big Data Application &amp; Analysis Competition — Second Prize</li>
-        <li class="zh-only">2025年辽宁省大学生"中软国际——卓越杯"（第四届） — 二等奖</li>
-        <li class="en-only">2025 Liaoning "Chinasoft Excellence Cup" (4th) — Second Prize</li>
-        <li class="zh-only">"中科杯"高校图书馆"文化润心 精神铸魂"活动 — 二等奖</li>
-        <li class="en-only">"Zhongke Cup" Library "Culture Nourishes the Mind" — Second Prize</li>
+        <li class="zh-only cert-link" data-cert="https://mp.weixin.qq.com/s/DKc_mFbxB1qS9sn6sjRrLA">2025、2026年辽宁省本科大学生计算机设计竞赛 — 二等奖 ×2</li>
+        <li class="en-only cert-link" data-cert="https://mp.weixin.qq.com/s/DKc_mFbxB1qS9sn6sjRrLA">2025, 2026 Liaoning Undergraduate Computer Design Competition — Second Prize ×2</li>
+        <li class="zh-only cert-link" data-cert="https://mp.weixin.qq.com/s/DoN-zQEnzIRfHTl17rJimg">2025年辽宁省大学生大数据应用与分析大赛 — 二等奖</li>
+        <li class="en-only cert-link" data-cert="https://mp.weixin.qq.com/s/DoN-zQEnzIRfHTl17rJimg">2025 Liaoning Big Data Application &amp; Analysis Competition — Second Prize</li>
+        <li class="zh-only cert-link" data-cert="https://mp.weixin.qq.com/s/dzzYLc6RqtF_4QCfGGom_Q">2025年辽宁省大学生"中软国际——卓越杯"（第四届） — 二等奖</li>
+        <li class="en-only cert-link" data-cert="https://mp.weixin.qq.com/s/dzzYLc6RqtF_4QCfGGom_Q">2025 Liaoning "Chinasoft Excellence Cup" (4th) — Second Prize</li>
+        <li class="zh-only cert-link" data-cert="https://mp.weixin.qq.com/s/lPIhf3FyjguG_taCx8Djwg">"中科杯"高校图书馆"文化润心 精神铸魂"活动 — 二等奖</li>
+        <li class="en-only cert-link" data-cert="https://mp.weixin.qq.com/s/lPIhf3FyjguG_taCx8Djwg">"Zhongke Cup" Library "Culture Nourishes the Mind" — Second Prize</li>
       </ul>
     </div>
 
     <div class="award-group">
       <div class="award-level"><span class="medal">🥉</span><span class="zh-only">省级三等奖（7项）</span><span class="en-only">Provincial Third Prize (7)</span></div>
       <ul class="award-list">
-        <li class="zh-only">第九届 CFCC 智慧经济创新创业竞赛 — 三等奖</li>
-        <li class="en-only">9th CFCC Smart Economy Innovation Competition — Third Prize</li>
-        <li class="zh-only">东北三省数学建模大赛 — 三等奖</li>
-        <li class="en-only">Northeast Three Provinces Mathematical Modeling — Third Prize</li>
-        <li class="zh-only">"蓝桥杯"全国软件和信息技术专业人才大赛 — 三等奖</li>
-        <li class="en-only">"Lanqiao Cup" National Software &amp; IT Talent Competition — Third Prize</li>
+        <li class="zh-only cert-link" data-cert="certs/cfcc.jpeg">第九届 CFCC 智慧经济创新创业竞赛 — 三等奖</li>
+        <li class="en-only cert-link" data-cert="certs/cfcc.jpeg">9th CFCC Smart Economy Innovation Competition — Third Prize</li>
+        <li class="zh-only cert-link" data-cert="https://it.dlufl.edu.cn/info/1020/2517.htm">东北三省数学建模大赛 — 三等奖</li>
+        <li class="en-only cert-link" data-cert="https://it.dlufl.edu.cn/info/1020/2517.htm">Northeast Three Provinces Mathematical Modeling — Third Prize</li>
+        <li class="zh-only cert-link" data-cert="certs/lanqiao.jpeg">"蓝桥杯"全国软件和信息技术专业人才大赛 — 三等奖</li>
+        <li class="en-only cert-link" data-cert="certs/lanqiao.jpeg">"Lanqiao Cup" National Software &amp; IT Talent Competition — Third Prize</li>
         <li class="zh-only">2025年辽宁省虚拟现实与新媒体创新设计大赛 — 三等奖</li>
         <li class="en-only">2025 Liaoning VR &amp; New Media Innovation Design — Third Prize</li>
         <li class="zh-only">2026年辽宁省大学生"中软国际——卓越杯"（第五届） — 三等奖</li>
         <li class="en-only">2026 Liaoning "Chinasoft Excellence Cup" (5th) — Third Prize</li>
         <li class="zh-only">2025年辽宁省无线电测定向大赛 — 三等奖</li>
         <li class="en-only">2025 Liaoning Radio Direction Finding Competition — Third Prize</li>
-        <li class="zh-only">第二十届海峡两岸暨港澳地区大学生计算机创新作品赛 — 辽吉蒙赛区三等奖</li>
-        <li class="en-only">20th Cross-Strait &amp; HK/Macau Computer Innovation — Regional Third Prize</li>
+        <li class="zh-only cert-link" data-cert="certs/cross-strait.jpeg">第二十届海峡两岸暨港澳地区大学生计算机创新作品赛 — 辽吉蒙赛区三等奖</li>
+        <li class="en-only cert-link" data-cert="certs/cross-strait.jpeg">20th Cross-Strait &amp; HK/Macau Computer Innovation — Regional Third Prize</li>
       </ul>
     </div>
 
     <div class="award-group">
       <div class="award-level"><span class="medal">📋</span><span class="zh-only">省级项目（2项）</span><span class="en-only">Provincial Projects (2)</span></div>
       <ul class="award-list">
-        <li class="zh-only">山东省大学生哲学社科专项课题（<strong>主持人</strong>）</li>
-        <li class="en-only">Shandong Provincial Philosophy &amp; Social Science Project (<strong>PI</strong>)</li>
-        <li class="zh-only">2025年大学生创新创业计划</li>
-        <li class="en-only">2025 College Students' Innovation &amp; Entrepreneurship Program</li>
+        <li class="zh-only cert-link" data-cert="certs/shandong-project.jpeg">山东省大学生哲学社科专项课题（<strong>主持人</strong>）</li>
+        <li class="en-only cert-link" data-cert="certs/shandong-project.jpeg">Shandong Provincial Philosophy &amp; Social Science Project (<strong>PI</strong>)</li>
+        <li class="zh-only cert-link" data-cert="certs/innovation-program.jpeg">2025年大学生创新创业计划</li>
+        <li class="en-only cert-link" data-cert="certs/innovation-program.jpeg">2025 College Students' Innovation &amp; Entrepreneurship Program</li>
       </ul>
     </div>
 
     <div class="highlight-box">
-      <p class="zh-only"><strong>其他成果：</strong>知网论文 1 篇 &nbsp;|&nbsp; 软件著作权 1 项 &nbsp;|&nbsp; 区政府表彰 &nbsp;|&nbsp; 媒体报道数十次 &nbsp;|&nbsp; IITC 工业互联网平台开发工程师 &nbsp;|&nbsp; CRA 市场调查与分析人才证书</p>
-      <p class="en-only"><strong>Other:</strong> 1 CNKI paper &nbsp;|&nbsp; 1 software copyright &nbsp;|&nbsp; District government commendation &nbsp;|&nbsp; Dozens of media reports &nbsp;|&nbsp; IITC Industrial Internet Developer &nbsp;|&nbsp; CRA Market Research Certificate</p>
+      <p class="zh-only"><strong>其他成果：</strong><span class="cert-link" data-cert="https://scholar.cnki.net/zn/Detail/index/GARJ2021_6/SQMZ4ECD2F7712DEEBB2DD9F75804FAC32B9" style="cursor:pointer;">知网论文 1 篇</span> &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/software-copyright.jpeg" style="cursor:pointer;">软件著作权 1 项</span> &nbsp;|&nbsp; 区政府表彰 &nbsp;|&nbsp; 媒体报道数十次 &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/iitc.jpeg" style="cursor:pointer;">IITC 工业互联网平台开发工程师</span> &nbsp;|&nbsp; CRA 市场调查与分析人才证书</p>
+      <p class="en-only"><strong>Other:</strong> <span class="cert-link" data-cert="https://scholar.cnki.net/zn/Detail/index/GARJ2021_6/SQMZ4ECD2F7712DEEBB2DD9F75804FAC32B9" style="cursor:pointer;">1 CNKI paper</span> &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/software-copyright.jpeg" style="cursor:pointer;">1 software copyright</span> &nbsp;|&nbsp; District government commendation &nbsp;|&nbsp; Dozens of media reports &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/iitc.jpeg" style="cursor:pointer;">IITC Industrial Internet Developer</span> &nbsp;|&nbsp; CRA Market Research Certificate</p>
+    </div>
+  </div>
+
+  <!-- Certificate Modal -->
+  <div class="cert-modal-overlay" id="certModal" onclick="closeCertModal(event)">
+    <div class="cert-modal">
+      <button class="cert-modal-close" onclick="closeCertModal(event)">✕</button>
+      <img id="certModalImg" src="" alt="证书" />
     </div>
   </div>
 
@@ -693,5 +761,41 @@ function switchLang(l){
   <!-- Footer -->
   <div class="footer">&copy; 2026 <span class="zh-only">张宏泽</span><span class="en-only">Zhang Hongze</span> &nbsp;&middot;&nbsp; <span class="zh-only">大连外国语大学</span><span class="en-only">Dalian University of Foreign Languages</span></div>
 </div>
+
+<script>
+// Certificate click handler
+document.addEventListener('click', function(e) {
+  var el = e.target.closest('.cert-link');
+  if (!el) return;
+  var cert = el.getAttribute('data-cert');
+  if (!cert) return;
+  
+  if (cert.startsWith('http')) {
+    // External URL: open in new tab
+    window.open(cert, '_blank');
+  } else {
+    // Local image: show in modal
+    var modal = document.getElementById('certModal');
+    var img = document.getElementById('certModalImg');
+    img.src = cert;
+    modal.classList.add('active');
+    e.preventDefault();
+    e.stopPropagation();
+  }
+});
+
+function closeCertModal(e) {
+  if (e.target.classList.contains('cert-modal-overlay') || e.target.classList.contains('cert-modal-close') || e.target.tagName === 'BUTTON') {
+    document.getElementById('certModal').classList.remove('active');
+  }
+}
+
+// ESC to close modal
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.getElementById('certModal').classList.remove('active');
+  }
+});
+</script>
 </body>
 </html>
