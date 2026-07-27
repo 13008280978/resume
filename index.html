@@ -364,6 +364,24 @@ body {
 .edu-stat.cert-link:hover .label::after {
   opacity: 1;
 }
+.edu-card h3.cert-link {
+  transition: all 0.2s;
+  border-radius: 8px;
+  display: inline-block;
+  padding: 2px 8px;
+  margin-left: -8px;
+}
+.edu-card h3.cert-link:hover {
+  color: var(--primary);
+}
+.edu-card h3.cert-link::after {
+  content: ' 🔗';
+  font-size: 11px;
+  opacity: 0.4;
+}
+.edu-card h3.cert-link:hover::after {
+  opacity: 1;
+}
 .cert-modal-overlay {
   display: none;
   position: fixed; top: 0; left: 0; right: 0; bottom: 0;
@@ -605,7 +623,7 @@ function switchLang(l){
       <span class="zh-only">教育背景</span><span class="en-only">Education</span>
     </div>
     <div class="edu-card">
-      <h3><span class="zh-only">大连外国语大学</span><span class="en-only">Dalian University of Foreign Languages</span></h3>
+      <h3 class="cert-link" data-cert="certs/admission-1.jpg,certs/admission-2.jpg,certs/admission-3.jpg" style="cursor:pointer;"><span class="zh-only">大连外国语大学</span><span class="en-only">Dalian University of Foreign Languages</span></h3>
       <p class="sub"><span class="zh-only">软件学院 · 网络工程专业（2024级）</span><span class="en-only">School of Software · B.E. in Network Engineering (Class of 2024)</span></p>
       <div class="edu-stats">
         <div class="edu-stat cert-link" data-cert="certs/gpa-freshman.jpg,certs/gpa-freshman-s1.jpg" style="cursor:pointer;">
@@ -814,6 +832,12 @@ function switchLang(l){
         <span class="time">2026</span>
         <p class="zh-only">跳远冠军、200米第四名。</p>
         <p class="en-only">Long Jump Champion, 200m 4th place.</p>
+      </div>
+      <div class="tl-item cert-link" data-cert="certs/sports-2025-long-jump.jpg,certs/sports-2025-triple-jump.jpg">
+        <h3><span class="zh-only">大连外国语大学校运动会</span><span class="en-only">DUFL Sports Meet</span></h3>
+        <span class="time">2025</span>
+        <p class="zh-only">跳远第四名、三级跳远第五名。</p>
+        <p class="en-only">Long Jump 4th, Triple Jump 5th.</p>
       </div>
       <div class="tl-item cert-link" data-cert="certs/chess-1.jpg,certs/chess-2.jpg">
         <h3><span class="zh-only">大连外国语大学中国象棋比赛</span><span class="en-only">DUFL Chinese Chess Competition</span></h3>
