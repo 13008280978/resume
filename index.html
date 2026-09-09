@@ -272,6 +272,34 @@ body {
   font-size: 13px;
 }
 
+/* ===== Projects ===== */
+.proj-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 22px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.proj-card:hover { border-color: #d1d5db; box-shadow: var(--shadow-sm); }
+.proj-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 2px; }
+.proj-card .sub { font-size: 12.5px; color: var(--text-4); margin-bottom: 6px; }
+.proj-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 10px; }
+.proj-tag {
+  font-size: 11.5px; font-weight: 600; color: var(--primary);
+  background: var(--primary-soft); border: 1px solid #dbe5f8;
+  padding: 2px 10px; border-radius: 20px;
+}
+.proj-card ul { padding-left: 18px; }
+.proj-card li { font-size: 13.5px; color: var(--text-2); margin-bottom: 4px; line-height: 1.65; }
+.proj-card li::marker { color: var(--primary-muted); }
+.proj-links { margin-top: 10px; display: flex; gap: 10px; flex-wrap: wrap; }
+.proj-links a {
+  font-size: 12.5px; font-weight: 600; color: var(--primary-muted);
+  text-decoration: none; border: 1px solid var(--border);
+  padding: 3px 12px; border-radius: 20px; transition: all 0.2s;
+}
+.proj-links a:hover { background: var(--primary-soft); color: var(--primary); border-color: var(--primary-muted); }
+
 /* ===== Awards ===== */
 .award-group { margin-bottom: 16px; }
 .award-level {
@@ -663,6 +691,49 @@ function switchLang(l){
       <div class="skill-tag en-only"><strong>Multimedia</strong><br>Video editing and Office; First Prize in Provincial Micro-film Competition</div>
       <div class="skill-tag zh-only"><strong>演讲与组织</strong><br>专业口才与演讲培训，出色的公众表达与跨部门组织协调能力</div>
       <div class="skill-tag en-only"><strong>Communication</strong><br>Professional public speaking and cross-departmental coordination</div>
+    </div>
+  </div>
+
+  <!-- Projects -->
+  <div class="section">
+    <div class="section-title">
+      <span class="icon">🛠️</span>
+      <span class="zh-only">项目经历</span><span class="en-only">Projects</span>
+    </div>
+    <div class="proj-card">
+      <h3><span class="zh-only">业会合拢报表系统 · 电信收入管理系统</span><span class="en-only">Telecom Revenue Report &amp; Reconciliation System</span></h3>
+      <p class="sub"><span class="zh-only">Spring Boot + Vue 3 全栈项目 · 2026</span><span class="en-only">Full-stack project (Spring Boot + Vue 3) · 2026</span></p>
+      <div class="proj-tags">
+        <span class="proj-tag">Spring Boot 2.7</span>
+        <span class="proj-tag">Spring Security + JWT</span>
+        <span class="proj-tag">MyBatis-Plus</span>
+        <span class="proj-tag">MySQL 8</span>
+        <span class="proj-tag">Apache POI</span>
+        <span class="proj-tag">Commons Net / FTP</span>
+        <span class="proj-tag">Knife4j</span>
+        <span class="proj-tag">Vue 3</span>
+        <span class="proj-tag">Element Plus</span>
+        <span class="proj-tag">Vite</span>
+        <span class="proj-tag">@Scheduled</span>
+      </div>
+      <ul class="zh-only">
+        <li>面向中国网通/电信设计"业会合拢"收入报表管理平台，实现「手工收入录入 → 收款稽核 → 数据归集 → 定时收入转换 → 财务接口生成」完整业务闭环</li>
+        <li>统一管理出帐、卡销售、网间结算、预存转、通知单 5 类收入，基于 Apache POI 实现 Excel 批量导入导出与模板校验，卡销售金额由后端强制计算，保证数据一致性</li>
+        <li>基于 Spring Security + JWT 实现 ADMIN / RECORDER / AUDITOR / FINANCE 四角色 RBAC 权限体系与接口级鉴权；稽核通过的记录自动锁定编辑权限，AOP + 自定义注解实现操作日志自动记录</li>
+        <li>使用 @Scheduled 定时任务生成话费出帐月汇总、预存转收入月汇总与通知单收入日汇总，按地市生成 TXT 财务接口文件及同名 MD5 校验文件，经 FTP 上传（失败自动重试 3 次）</li>
+        <li>编写 6 个 Service 层单元测试类（JUnit + Mockito），提供 Knife4j 在线接口文档与 Postman 接口集</li>
+      </ul>
+      <ul class="en-only">
+        <li>Built a telecom "business-finance reconciliation" revenue report platform for China Netcom/Telecom, closing the loop of manual income entry → audit → collection → scheduled conversion → financial interface file generation</li>
+        <li>Unified management of 5 income types (billed, card sale, inter-network settlement, prepaid-to-revenue, notice) with POI-based Excel batch import/export and template validation; card-sale amounts enforced server-side</li>
+        <li>Implemented 4-role RBAC (ADMIN/RECORDER/AUDITOR/FINANCE) with Spring Security + JWT and API-level authorization; audit-passed records auto-locked from editing; AOP + custom annotation for operation logging</li>
+        <li>Scheduled jobs produce monthly billed-revenue, prepaid-revenue and daily notice summaries; per-city TXT interface files with paired MD5 checksums are uploaded via FTP with automatic 3-retry</li>
+        <li>Wrote 6 service-layer unit test suites (JUnit + Mockito), plus Knife4j API docs and a Postman collection</li>
+      </ul>
+      <div class="proj-links">
+        <a href="https://github.com/13008280978/telecom-report-system" target="_blank" rel="noopener"><span class="zh-only">GitHub 源码</span><span class="en-only">Source Code</span></a>
+        <a href="https://13008280978.github.io/telecom-report-system/" target="_blank" rel="noopener"><span class="zh-only">在线演示</span><span class="en-only">Live Demo</span></a>
+      </div>
     </div>
   </div>
 
