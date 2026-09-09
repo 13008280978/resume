@@ -807,6 +807,34 @@ function switchLang(l){
     </div>
 
     <div class="proj-card">
+      <h3><span class="zh-only">烟幕干扰弹的投放策略</span><span class="en-only">Deployment Strategy of Smoke-Screen Interference Projectiles</span></h3>
+      <p class="sub"><span class="zh-only">Python · 2025年高教社杯全国大学生数学建模竞赛 A 题 · 辽宁赛区一等奖</span><span class="en-only">Python · 2025 CUMCM Problem A · Liaoning Division First Prize</span></p>
+      <div class="proj-tags">
+        <span class="proj-tag">Python</span>
+        <span class="proj-tag">NumPy/SciPy</span>
+        <span class="proj-tag">三维运动学建模</span>
+        <span class="proj-tag">模拟退火算法</span>
+        <span class="proj-tag">混合遗传算法</span>
+        <span class="proj-tag">线段-球体相交判定</span>
+      </div>
+      <ul class="zh-only">
+        <li>建立导弹、无人机与烟幕弹的三维运动学模型，设计"视线线段-烟幕球体"几何相交遮蔽判定（真目标 34 特征点采样、0.001s 步长），求解单弹有效遮蔽时长 1.407s，与理论解析解误差 &lt; 0.5%</li>
+        <li>设计自适应模拟退火算法（Metropolis 准则、自适应扰动幅度、历史最优重启），联合优化飞行方向、速度与投放/起爆时序，将有效遮蔽时长提升至 4.868s（较初始策略提升约 3.4 倍）</li>
+        <li>针对单机 3 弹、3 机协同与 5 机拦截 3 导弹场景，采用混合遗传-模拟退火算法实现多弹时空协同与多无人机资源分配，5 机场景总有效遮蔽时间达 11.40s</li>
+        <li>完成三重验证：解析解对比（误差 &lt; 0.5%）、网格收敛性分析、参数敏感性分析与加噪鲁棒性测试（100 组 ±5% 噪声下有效遮蔽率 100%）</li>
+      </ul>
+      <ul class="en-only">
+        <li>Built 3D kinematic models of the missile, UAV and smoke projectile with line-segment/sphere occlusion detection (34 target feature points, 0.001s step), computing 1.407s of effective shielding with &lt;0.5% error vs. the analytic solution</li>
+        <li>Designed an adaptive simulated annealing optimizer (Metropolis criterion, adaptive perturbation, best-solution restart) to jointly optimize heading, speed and release/detonation timing, lifting shielding time to 4.868s (≈3.4× improvement)</li>
+        <li>Applied a hybrid GA-SA scheme for single-UAV 3-projectile, 3-UAV coordination and 5-UAV vs 3-missile allocation, achieving 11.40s total shielding in the 5-UAV scenario</li>
+        <li>Triple validation: analytic comparison (&lt;0.5% error), mesh convergence, sensitivity analysis and noise robustness tests (100% effective shielding rate under ±5% noise)</li>
+      </ul>
+      <div class="proj-links">
+        <a href="https://github.com/13008280978/cumcm2025-smoke-interference-strategy" target="_blank" rel="noopener"><span class="zh-only">GitHub 源码</span><span class="en-only">Source Code</span></a>
+      </div>
+    </div>
+
+    <div class="proj-card">
       <h3><span class="zh-only">小区物业管理系统</span><span class="en-only">Residential Property Management System</span></h3>
       <p class="sub"><span class="zh-only">Spring MVC + JSP/Servlet + MySQL</span><span class="en-only">Spring MVC + JSP/Servlet + MySQL</span></p>
       <div class="proj-tags">
