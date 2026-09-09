@@ -299,6 +299,21 @@ body {
   padding: 3px 12px; border-radius: 20px; transition: all 0.2s;
 }
 .proj-links a:hover { background: var(--primary-soft); color: var(--primary); border-color: var(--primary-muted); }
+.sub-section-title { font-size: 13px; font-weight: 700; color: var(--text-3); margin: 20px 0 10px; }
+.mini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.mini-card {
+  background: #fff; border: 1px solid var(--border); border-radius: 10px;
+  padding: 12px 14px; transition: all 0.15s;
+}
+.mini-card:hover { border-color: var(--primary-muted); box-shadow: var(--shadow-xs); }
+.mini-card h4 { font-size: 13.5px; font-weight: 700; margin-bottom: 3px; }
+.mini-card h4 a { color: var(--text-1); text-decoration: none; }
+.mini-card h4 a:hover { color: var(--primary); }
+.mini-card .mini-tags { font-size: 11px; color: var(--primary-muted); font-weight: 600; margin-bottom: 3px; }
+.mini-card p { font-size: 12.5px; color: var(--text-3); line-height: 1.55; }
+.mini-card p a { color: var(--primary-muted); text-decoration: none; }
+.mini-card p a:hover { text-decoration: underline; }
+@media (max-width: 600px) { .mini-grid { grid-template-columns: 1fr; } }
 
 /* ===== Awards ===== */
 .award-group { margin-bottom: 16px; }
@@ -733,6 +748,174 @@ function switchLang(l){
       <div class="proj-links">
         <a href="https://github.com/13008280978/telecom-report-system" target="_blank" rel="noopener"><span class="zh-only">GitHub 源码</span><span class="en-only">Source Code</span></a>
         <a href="https://13008280978.github.io/telecom-report-system/" target="_blank" rel="noopener"><span class="zh-only">在线演示</span><span class="en-only">Live Demo</span></a>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <h3><span class="zh-only">智巡慧眼 · 多模态目标识别与车牌识别系统</span><span class="en-only">ZhiXun HuiYan — Multimodal Object &amp; License-Plate Recognition</span></h3>
+      <p class="sub"><span class="zh-only">Python · 2026人工智能挑战赛</span><span class="en-only">Python · 2026 AI Challenge</span></p>
+      <div class="proj-tags">
+        <span class="proj-tag">Python</span>
+        <span class="proj-tag">YOLOv11 (Ultralytics)</span>
+        <span class="proj-tag">EasyOCR</span>
+        <span class="proj-tag">OpenCV</span>
+        <span class="proj-tag">卡尔曼滤波</span>
+        <span class="proj-tag">规则引擎</span>
+        <span class="proj-tag">Gradio</span>
+      </div>
+      <ul class="zh-only">
+        <li>基于 YOLOv11 实现人、动物、物体三类目标检测与车牌检测，结合 EasyOCR 完成车牌字符识别，支持图片、视频、实时摄像头与摄像头快照四种检测模式</li>
+        <li>设计规则引擎实现动物入侵、人员聚集、限制区域闯入、车牌黑白名单四类智能预警，输出标注图像/视频、CSV 检测日志与 JSON 结构化摘要</li>
+        <li>结合卡尔曼滤波对检测目标进行轨迹跟踪，提升跨帧检测的稳定性与识别精度</li>
+        <li>搭建 Gradio Web 交互界面与 CLI、本地摄像头多模式入口，配置化管理模型权重、检测阈值与预警规则，支持一键启动</li>
+      </ul>
+      <ul class="en-only">
+        <li>YOLOv11-based detection of people, animals and objects plus license plates, with EasyOCR character recognition; supports image, video, live-camera and snapshot modes</li>
+        <li>Rule engine for four smart alerts (animal intrusion, crowd gathering, restricted-zone breach, plate black/white list), exporting annotated media, CSV logs and JSON summaries</li>
+        <li>Kalman-filter-based trajectory tracking for stable cross-frame detection and improved accuracy</li>
+        <li>Gradio web UI plus CLI and local-camera entry points, with configurable weights, thresholds and alert rules</li>
+      </ul>
+      <div class="proj-links">
+        <a href="https://github.com/13008280978/license-plate-recognition" target="_blank" rel="noopener"><span class="zh-only">GitHub 源码</span><span class="en-only">Source Code</span></a>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <h3><span class="zh-only">辽宁冬季冰雪道路图像重构的智能增强</span><span class="en-only">Intelligent Enhancement of Snow/Ice Road Image Reconstruction</span></h3>
+      <p class="sub"><span class="zh-only">Python · 2026年辽宁省大学生数学建模竞赛 A 题</span><span class="en-only">Python · 2026 Liaoning Mathematical Modeling Competition, Problem A</span></p>
+      <div class="proj-tags">
+        <span class="proj-tag">Python</span>
+        <span class="proj-tag">自适应伽马校正</span>
+        <span class="proj-tag">暗通道先验去雾</span>
+        <span class="proj-tag">多尺度 Retinex</span>
+        <span class="proj-tag">AHP-熵权法</span>
+        <span class="proj-tag">无参考质量评价 NR-IQA</span>
+      </div>
+      <ul class="zh-only">
+        <li>针对辽宁冬季冰雪道路图像退化问题，提出基于物理退化机理分析的递进式图像增强方案，覆盖清晰、轻度冰雪、重度冰雪三级场景</li>
+        <li>融合自适应伽马校正、暗通道先验去雾、多尺度 Retinex 分解、去雪处理、纹理恢复与道路标线保护等算法，并引入过增强抑制防止颜色失真</li>
+        <li>构建五维度 16 项指标的无参考图像质量评价体系，采用 AHP 主观权重与熵权法客观权重组合赋权，实现增强效果的量化评估</li>
+      </ul>
+      <ul class="en-only">
+        <li>Progressive enhancement framework based on physical degradation analysis for snow/ice road images, covering clear, light and heavy snow/ice scenes</li>
+        <li>Combines adaptive gamma correction, dark-channel-prior dehazing, multi-scale Retinex decomposition, snow removal, texture recovery and road-marking protection, with over-enhancement suppression</li>
+        <li>No-reference IQA with 16 metrics across 5 dimensions, weighted by combining AHP subjective and entropy-based objective weights</li>
+      </ul>
+      <div class="proj-links">
+        <a href="https://github.com/13008280978/liaoning-snow-road-image-enhancement" target="_blank" rel="noopener"><span class="zh-only">GitHub 源码</span><span class="en-only">Source Code</span></a>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <h3><span class="zh-only">小区物业管理系统</span><span class="en-only">Residential Property Management System</span></h3>
+      <p class="sub"><span class="zh-only">Spring MVC + JSP/Servlet + MySQL</span><span class="en-only">Spring MVC + JSP/Servlet + MySQL</span></p>
+      <div class="proj-tags">
+        <span class="proj-tag">Java</span>
+        <span class="proj-tag">Spring MVC</span>
+        <span class="proj-tag">JSP/Servlet</span>
+        <span class="proj-tag">MySQL</span>
+        <span class="proj-tag">i18n 中英双语</span>
+      </div>
+      <ul class="zh-only">
+        <li>实现房屋档案、物业费账单、报修工单与住户/管理员多角色功能，内置登录尝试次数限制、密码哈希存储等安全机制</li>
+        <li>支持中英双语界面切换，封装嵌入式服务器实现一键启动部署</li>
+      </ul>
+      <ul class="en-only">
+        <li>House archives, fee billing, repair orders and multi-role access, with login attempt limiting and hashed password storage</li>
+        <li>Bilingual (zh/en) UI with an embedded server for one-click deployment</li>
+      </ul>
+      <div class="proj-links">
+        <a href="https://github.com/13008280978/property-management-system" target="_blank" rel="noopener"><span class="zh-only">GitHub 源码</span><span class="en-only">Source Code</span></a>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <h3><span class="zh-only">学生成绩管理系统</span><span class="en-only">Student Grade Management System</span></h3>
+      <p class="sub"><span class="zh-only">JSP/Servlet + MyBatis + MySQL</span><span class="en-only">JSP/Servlet + MyBatis + MySQL</span></p>
+      <div class="proj-tags">
+        <span class="proj-tag">Java</span>
+        <span class="proj-tag">JSP/Servlet</span>
+        <span class="proj-tag">MyBatis</span>
+        <span class="proj-tag">MySQL</span>
+      </div>
+      <ul class="zh-only">
+        <li>实现学生、课程、成绩、学分全流程管理，支持组合查询、成绩分析、GPA 计算与成绩单导出</li>
+        <li>内置学业预警与奖学金候选自动评估模块，提供中英双语界面与角色权限隔离</li>
+      </ul>
+      <ul class="en-only">
+        <li>End-to-end management of students, courses, scores and credits with combined queries, grade analysis, GPA computation and transcript export</li>
+        <li>Built-in study alerts and automatic scholarship-candidate evaluation, with bilingual UI and role-based isolation</li>
+      </ul>
+      <div class="proj-links">
+        <a href="https://github.com/13008280978/student-grade-management-system" target="_blank" rel="noopener"><span class="zh-only">GitHub 源码</span><span class="en-only">Source Code</span></a>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <h3><span class="zh-only">志愿服务管理平台</span><span class="en-only">Volunteer Service Management Platform</span></h3>
+      <p class="sub"><span class="zh-only">JSP + Servlet + MyBatis + MySQL</span><span class="en-only">JSP + Servlet + MyBatis + MySQL</span></p>
+      <div class="proj-tags">
+        <span class="proj-tag">Java</span>
+        <span class="proj-tag">JSP/Servlet</span>
+        <span class="proj-tag">MyBatis</span>
+        <span class="proj-tag">MySQL</span>
+      </div>
+      <ul class="zh-only">
+        <li>实现志愿活动发布、在线报名、签到考勤、服务心得与积分体系，配套通知公告与后台数据统计</li>
+        <li>志愿者/管理员双端分层设计与登录过滤，覆盖"发布—报名—签到—评价—积分"完整业务流程</li>
+      </ul>
+      <ul class="en-only">
+        <li>Activity publishing, online enrollment, check-in attendance, experience sharing and a points system, with notices and admin statistics</li>
+        <li>Layered volunteer/admin portals with login filtering, covering the full publish → enroll → check-in → review → points workflow</li>
+      </ul>
+      <div class="proj-links">
+        <a href="https://github.com/13008280978/volunteer-service-platform" target="_blank" rel="noopener"><span class="zh-only">GitHub 源码</span><span class="en-only">Source Code</span></a>
+      </div>
+    </div>
+
+    <div class="sub-section-title"><span class="zh-only">更多项目</span><span class="en-only">More Projects</span></div>
+    <div class="mini-grid">
+      <div class="mini-card">
+        <h4><a href="https://github.com/13008280978/parking-fee-management-system" target="_blank" rel="noopener"><span class="zh-only">车辆停车收费管理系统</span><span class="en-only">Parking Fee Management System</span></a></h4>
+        <div class="mini-tags">JSP/Servlet · JDBC · MySQL</div>
+        <p class="zh-only">车辆入场、离场自动阶梯计费（首小时 5 元、每日封顶 60 元），车位管理与收费工作台统计</p>
+        <p class="en-only">Auto tiered billing on entry/exit, parking-space management and revenue dashboard</p>
+      </div>
+      <div class="mini-card">
+        <h4><a href="https://github.com/13008280978/hr-management-system" target="_blank" rel="noopener"><span class="zh-only">人事管理系统</span><span class="en-only">HR Management System</span></a></h4>
+        <div class="mini-tags">JSP/Servlet · JDBC · MySQL</div>
+        <p class="zh-only">员工档案、部门管理、考勤签到签退与管理员/HR/员工多角色数据工作台</p>
+        <p class="en-only">Employee records, departments, attendance and multi-role dashboards</p>
+      </div>
+      <div class="mini-card">
+        <h4><a href="https://github.com/13008280978/inventory-management-system" target="_blank" rel="noopener"><span class="zh-only">商品库存管理系统</span><span class="en-only">Inventory Management System</span></a></h4>
+        <div class="mini-tags">JSP/Servlet · JavaBean · JDBC</div>
+        <p class="zh-only">商品管理、入库/出库/盘点流水与低库存颜色预警</p>
+        <p class="en-only">Products, stock in/out and inventory-count records with low-stock alerts</p>
+      </div>
+      <div class="mini-card">
+        <h4><a href="https://github.com/13008280978/student-grade-query-system" target="_blank" rel="noopener"><span class="zh-only">学生成绩查询系统</span><span class="en-only">Student Grade Query System</span></a></h4>
+        <div class="mini-tags">Servlet · JDBC · MySQL</div>
+        <p class="zh-only">成绩查询、统计分析与成绩数据导出</p>
+        <p class="en-only">Grade query, statistical analysis and data export</p>
+      </div>
+      <div class="mini-card">
+        <h4><a href="https://github.com/13008280978/Dhee_project" target="_blank" rel="noopener"><span class="zh-only">Dhee 电信收入报表系统</span><span class="en-only">Dhee Telecom Revenue System</span></a></h4>
+        <div class="mini-tags">Spring Boot · Thymeleaf · MyBatis</div>
+        <p class="zh-only">出账、卡销售、网间结算、预存转、通知单五类收入管理与 Excel 导入导出</p>
+        <p class="en-only">Five revenue types (billed, card sale, settlement, prepaid, notice) with Excel import/export</p>
+      </div>
+      <div class="mini-card">
+        <h4><a href="https://github.com/13008280978/fuxin-agate" target="_blank" rel="noopener"><span class="zh-only">阜新玛瑙文化展示站</span><span class="en-only">Fuxin Agate Showcase Site</span></a></h4>
+        <div class="mini-tags">HTML/CSS/JS · 响应式静态站</div>
+        <p class="zh-only">玛瑙文化宣传与商品陈列静态官网，多板块图文展示 <a href="https://13008280978.github.io/fuxin-agate/" target="_blank" rel="noopener">在线预览</a></p>
+        <p class="en-only">Static cultural showcase site for Fuxin agate with product gallery <a href="https://13008280978.github.io/fuxin-agate/" target="_blank" rel="noopener">Live</a></p>
+      </div>
+      <div class="mini-card">
+        <h4><a href="https://github.com/13008280978/aixiaobao" target="_blank" rel="noopener"><span class="zh-only">爱小宝 · 交互式创意网页</span><span class="en-only">AiXiaoBao — Interactive Creative Page</span></a></h4>
+        <div class="mini-tags">HTML/CSS/JS</div>
+        <p class="zh-only">充满巧思的交互式告白网页，趣味按钮交互与动画效果 <a href="https://13008280978.github.io/aixiaobao/" target="_blank" rel="noopener">在线预览</a></p>
+        <p class="en-only">A playful interactive confession page with animated interactions <a href="https://13008280978.github.io/aixiaobao/" target="_blank" rel="noopener">Live</a></p>
       </div>
     </div>
   </div>
