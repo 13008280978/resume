@@ -545,6 +545,69 @@ body {
 }
 .highlight-box strong { color: #92400e; }
 
+/* ===== Achievements highlight panel (Education) ===== */
+.achieve-panel {
+  margin-top: 14px;
+  padding: 18px 22px;
+  background: linear-gradient(135deg, #fffbeb, #fef3c7 55%, #fde68a);
+  border: 1.5px solid #f59e0b;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+.achieve-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14.5px;
+  font-weight: 800;
+  color: #92400e;
+  margin-bottom: 10px;
+}
+.achieve-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(217,119,6,0.35);
+  margin-left: 8px;
+}
+.achieve-main {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.achieve-main li {
+  position: relative;
+  padding: 7px 0 7px 30px;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #78350f;
+  line-height: 1.55;
+  border-bottom: 1px dashed rgba(217,119,6,0.25);
+}
+.achieve-main li:last-child { border-bottom: none; }
+.achieve-main li::before {
+  content: '★';
+  position: absolute;
+  left: 6px;
+  top: 8px;
+  color: #d97706;
+  font-size: 13px;
+}
+.achieve-main li.cert-link { cursor: pointer; }
+.achieve-main li.cert-link::after { content: ' 🔗'; font-size: 11px; opacity: 0.55; }
+.achieve-main li.cert-link:hover { color: #b45309; }
+.achieve-main li.cert-link:hover::after { opacity: 1; }
+.achieve-rest {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1.5px dashed rgba(217,119,6,0.4);
+  font-size: 12.5px;
+  color: #92400e;
+  line-height: 1.9;
+}
+.achieve-rest .cert-link { cursor: pointer; }
+.achieve-rest .cert-link:hover { color: #b45309; }
+
 /* ===== Experience Timeline ===== */
 .timeline { position: relative; padding-left: 20px; }
 .timeline::before {
@@ -714,6 +777,24 @@ function setProjAll(collapsed){
           <div class="value">3/142</div>
           <div class="detail"><span class="zh-only">综合年级 38/1018</span><span class="en-only">Grade 38/1018</span></div>
         </div>
+      </div>
+    </div>
+
+    <div class="achieve-panel">
+      <div class="achieve-title"><span>🏆</span><span class="zh-only">成果与荣誉</span><span class="en-only">Achievements &amp; Honors</span></div>
+      <ul class="achieve-main">
+        <li class="zh-only cert-link" data-cert="certs/government-commendation.jpg">获辽阳市白塔区政府公文表彰</li>
+        <li class="en-only cert-link" data-cert="certs/government-commendation.jpg">Commended via official document by Baita District Government, Liaoyang City</li>
+        <li class="zh-only cert-link" data-cert="certs/social-practice-cert.jpg,certs/social-practice-cover.jpg">荣获 2024-2025 学年大连外国语大学社会实践先进个人</li>
+        <li class="en-only cert-link" data-cert="certs/social-practice-cert.jpg,certs/social-practice-cover.jpg">2024-2025 DUFL Social Practice Outstanding Individual</li>
+        <li class="zh-only">荣获 2025-2026 学年国家励志奖学金</li>
+        <li class="en-only">2025-2026 National Endeavor Scholarship</li>
+        <li class="zh-only cert-link" data-cert="certs/outstanding-student.jpg">荣获 2025-2026 学年大连外国语大学优秀学生</li>
+        <li class="en-only cert-link" data-cert="certs/outstanding-student.jpg">2025-2026 DUFL Outstanding Student</li>
+      </ul>
+      <div class="achieve-rest">
+        <span class="zh-only"><span class="cert-link" data-cert="https://scholar.cnki.net/zn/Detail/index/GARJ2021_6/SQMZ4ECD2F7712DEEBB2DD9F75804FAC32B9">知网论文 1 篇</span> &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/software-copyright.jpeg">软件著作权 1 项</span> &nbsp;|&nbsp; 媒体报道数十次 &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/iitc.jpeg">IITC 工业互联网平台开发工程师</span> &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/cra-certificate.jpg">CRA 市场调查与分析人才证书</span></span>
+        <span class="en-only"><span class="cert-link" data-cert="https://scholar.cnki.net/zn/Detail/index/GARJ2021_6/SQMZ4ECD2F7712DEEBB2DD9F75804FAC32B9">1 CNKI paper</span> &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/software-copyright.jpeg">1 software copyright</span> &nbsp;|&nbsp; Dozens of media reports &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/iitc.jpeg">IITC Industrial Internet Developer</span> &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/cra-certificate.jpg">CRA Market Research Certificate</span></span>
       </div>
     </div>
   </div>
@@ -1038,8 +1119,10 @@ function setProjAll(collapsed){
     <p style="font-size:12px;color:var(--text-4);margin-bottom:12px;"><span class="zh-only">点击带有 🔗 标记的奖项可查看证书</span><span class="en-only">Click awards marked with 🔗 to view certificates</span></p>
 
     <div class="award-group">
-      <div class="award-level"><span class="medal">🥇</span><span class="zh-only">国家级（2项）</span><span class="en-only">National Level (2)</span></div>
+      <div class="award-level"><span class="medal">🥇</span><span class="zh-only">国家级（3项）</span><span class="en-only">National Level (3)</span></div>
       <ul class="award-list">
+        <li class="zh-only">2025-2026学年国家励志奖学金</li>
+        <li class="en-only">2025-2026 National Endeavor Scholarship</li>
         <li class="zh-only cert-link" data-cert="certs/icpc.png">ICPC 国际大学生程序设计大赛（陕西站）全国邀请赛 — <strong>全国优秀奖</strong></li>
         <li class="en-only cert-link" data-cert="certs/icpc.png">ICPC (Shaanxi) National Invitational — <strong>National Excellence Award</strong></li>
         <li class="zh-only cert-link" data-cert="certs/computer-app.jpeg">全国大学生计算机应用能力与数字素养大赛 — <strong>全国三等奖</strong></li>
@@ -1121,11 +1204,6 @@ function setProjAll(collapsed){
         <li class="zh-only cert-link" data-cert="certs/honor-guard-1.jpg,certs/honor-guard-2.jpg">校运动会仪仗队成员</li>
         <li class="en-only cert-link" data-cert="certs/honor-guard-1.jpg,certs/honor-guard-2.jpg">Sports Meet Honor Guard Member</li>
       </ul>
-    </div>
-
-    <div class="highlight-box">
-      <p class="zh-only"><strong>其他成果：</strong><span class="cert-link" data-cert="https://scholar.cnki.net/zn/Detail/index/GARJ2021_6/SQMZ4ECD2F7712DEEBB2DD9F75804FAC32B9" style="cursor:pointer;">知网论文 1 篇</span> &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/software-copyright.jpeg" style="cursor:pointer;">软件著作权 1 项</span> &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/government-commendation.jpg" style="cursor:pointer;">区政府表彰</span> &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/social-practice-cert.jpg,certs/social-practice-cover.jpg" style="cursor:pointer;">社会实践先进个人</span> &nbsp;|&nbsp; 媒体报道数十次 &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/iitc.jpeg" style="cursor:pointer;">IITC 工业互联网平台开发工程师</span> &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/cra-certificate.jpg" style="cursor:pointer;">CRA 市场调查与分析人才证书</p>
-      <p class="en-only"><strong>Other:</strong> <span class="cert-link" data-cert="https://scholar.cnki.net/zn/Detail/index/GARJ2021_6/SQMZ4ECD2F7712DEEBB2DD9F75804FAC32B9" style="cursor:pointer;">1 CNKI paper</span> &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/software-copyright.jpeg" style="cursor:pointer;">1 software copyright</span> &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/government-commendation.jpg" style="cursor:pointer;">District government commendation</span> &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/social-practice-cert.jpg,certs/social-practice-cover.jpg" style="cursor:pointer;">Social Practice Outstanding Individual</span> &nbsp;|&nbsp; Dozens of media reports &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/iitc.jpeg" style="cursor:pointer;">IITC Industrial Internet Developer</span> &nbsp;|&nbsp; <span class="cert-link" data-cert="certs/cra-certificate.jpg" style="cursor:pointer;">CRA Market Research Certificate</p>
     </div>
   </div>
 
