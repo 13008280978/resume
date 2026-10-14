@@ -147,6 +147,9 @@ body {
   font-weight: 500;
 }
 .chip svg { width: 13px; height: 13px; flex-shrink: 0; }
+.chip.cert-link { cursor: pointer; }
+.chip.cert-link::after { content: ' 🔗'; font-size: 10px; opacity: 0.55; margin-left: 2px; }
+.chip.cert-link:hover { border-color: var(--primary-muted); color: var(--primary); }
 
 /* ===== Section Headings ===== */
 .section {
@@ -640,9 +643,9 @@ function switchLang(l){
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
         <span class="zh-only">辽宁省大连市</span><span class="en-only">Dalian, China</span>
       </span>
-      <span class="chip">
+      <span class="chip cert-link" data-cert="certs/fazhan-duixiang-1.jpg,certs/fazhan-duixiang-2.jpg" title="点击查看发展对象公示">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        <span class="zh-only">共青团员（入党积极分子）</span><span class="en-only">CYL Member (Party Activist)</span>
+        <span class="zh-only">共青团员（发展对象）</span><span class="en-only">CYL Member (CPC Development Target)</span>
       </span>
     </div>
   </div>
@@ -674,10 +677,10 @@ function switchLang(l){
           <div class="value">1/145</div>
           <div class="detail"><span class="zh-only">综合年级 11/1089</span><span class="en-only">Grade 11/1089</span></div>
         </div>
-        <div class="edu-stat cert-link" data-cert="certs/gpa-sophomore.jpg" style="cursor:pointer;">
+        <div class="edu-stat cert-link" data-cert="certs/gpa-sophomore.jpg,certs/zongce-sophomore.jpg,certs/zongce-full-year.jpg" style="cursor:pointer;">
           <div class="label"><span class="zh-only">大二 · 专业排名</span><span class="en-only">Sophomore · Major</span></div>
-          <div class="value">2/143</div>
-          <div class="detail"><span class="zh-only">综合年级 18/1089</span><span class="en-only">Grade 18/1089</span></div>
+          <div class="value">3/142</div>
+          <div class="detail"><span class="zh-only">综合年级 38/1018</span><span class="en-only">Grade 38/1018</span></div>
         </div>
       </div>
     </div>
@@ -1056,8 +1059,10 @@ function switchLang(l){
     </div>
 
     <div class="award-group">
-      <div class="award-level"><span class="medal">🏅</span><span class="zh-only">校级荣誉（2项）</span><span class="en-only">University Level (2)</span></div>
+      <div class="award-level"><span class="medal">🏅</span><span class="zh-only">校级荣誉（3项）</span><span class="en-only">University Level (3)</span></div>
       <ul class="award-list">
+        <li class="zh-only cert-link" data-cert="certs/outstanding-student.jpg">2025-2026学年度大连外国语大学优秀学生</li>
+        <li class="en-only cert-link" data-cert="certs/outstanding-student.jpg">2025-2026 Academic Year DUFL Outstanding Student</li>
         <li class="zh-only cert-link" data-cert="certs/xingchen-plan-1.jpg,certs/xingchen-plan-2.jpg">第六期大学生职业生涯规划公益项目"星辰计划"</li>
         <li class="en-only cert-link" data-cert="certs/xingchen-plan-1.jpg,certs/xingchen-plan-2.jpg">6th "Star Plan" Public Career-Planning Program</li>
         <li class="zh-only cert-link" data-cert="certs/honor-guard-1.jpg,certs/honor-guard-2.jpg">校运动会仪仗队成员</li>
